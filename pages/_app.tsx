@@ -7,10 +7,10 @@ export default function MyApp({ Component, pageProps }: AppProps): JSX.Element {
     <>
       <Head>
         <title>Top App</title>
-        <link rel="icon" href="/favicon.ico" />
+        <link href="/favicon.ico" rel="icon" />
 
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="true" />
+        <link href="https://fonts.googleapis.com" rel="preconnect" />
+        <link crossOrigin="true" href="https://fonts.gstatic.com" rel="preconnect" />
         <link
           href="https://fonts.googleapis.com/css2?family=Noto+Sans+Display:wght@300;400;500;700&display=swap"
           rel="stylesheet"

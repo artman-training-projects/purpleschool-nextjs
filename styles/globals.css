@@ -1,11 +1,13 @@
 :root {
   --font-family: 'Noto Sans Display', sans-serif;
-  --black: #3B434E;
+  --black: #3b434e;
   --white: white;
-  --primary: #7653FC;
-  --red: #FC836D;
-  --green: #1DC37E;
-  --green-light: #C8F8E4;
+  --primary: #7653fc;
+  --primary-hover: #5237c2;
+  --red: #fc836d;
+  --green: #1dc37e;
+  --green-light: #c8f8e4;
+  --gray-light: #ebebeb;
 }
 
 html,
@@ -14,7 +16,7 @@ body {
   padding: 0;
 
   color: var(--black);
-  background-color: #F5F6F8;
+  background-color: #f5f6f8;
 
   font-family: 'Noto Sans Display', sans-serif;
 }

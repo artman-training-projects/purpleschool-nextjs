@@ -5,6 +5,18 @@
   "rules": {
     "semi": "off",
     "quotes": ["error", "single"],
+    // "react/jsx-max-props-per-line": [1, { "when": "multiline" }],
+    // "react/jsx-first-prop-new-line": "always",
+    "react/jsx-sort-props": [
+      1,
+      {
+        "callbacksLast": true,
+        "shorthandFirst": true
+        // "shorthandLast": <boolean>,
+        // "ignoreCase": true,
+        // "noSortAlphabetically": <boolean>,
+      }
+    ],
     "@typescript-eslint/semi": ["warn"],
     "@typescript-eslint/no-empty-interface": [
       "error",
