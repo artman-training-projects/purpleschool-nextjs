@@ -1,17 +1,14 @@
 import { Htag } from '../components';
-import { Button } from '../components';
+import { Ptag } from '../components';
 
 export default function Home(): JSX.Element {
   return (
     <div>
       <Htag tag="h1">Some text</Htag>
 
-      <Button appearance="ghost">ghost</Button>
-      <Button appearance="primary">primary</Button>
-
-      <Button appearance="primary" arrow="right">
-        with arrow
-      </Button>
+      <Ptag size="s">Small text</Ptag>
+      <Ptag>Medium text</Ptag>
+      <Ptag size="l">Large text</Ptag>
     </div>
   );
 }
