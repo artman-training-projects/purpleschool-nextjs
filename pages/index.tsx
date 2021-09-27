@@ -8,6 +8,10 @@ export default function Home(): JSX.Element {
 
       <Button appearance="ghost">ghost</Button>
       <Button appearance="primary">primary</Button>
+
+      <Button appearance="primary" arrow="right">
+        with arrow
+      </Button>
     </div>
   );
 }
