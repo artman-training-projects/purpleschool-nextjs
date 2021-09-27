@@ -17,6 +17,7 @@
         // "noSortAlphabetically": <boolean>,
       }
     ],
+    "@next/next/no-document-import-in-page": "off",
     "@typescript-eslint/semi": ["warn"],
     "@typescript-eslint/no-empty-interface": [
       "error",

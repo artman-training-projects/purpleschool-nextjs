@@ -1,14 +1,19 @@
-import { Htag } from '../components';
-import { Ptag } from '../components';
+import { Header, Tag } from '../components';
 
 export default function Home(): JSX.Element {
   return (
     <div>
-      <Htag tag="h1">Some text</Htag>
+      <Header tag="h1">Some text</Header>
 
-      <Ptag size="s">Small text</Ptag>
-      <Ptag>Medium text</Ptag>
-      <Ptag size="l">Large text</Ptag>
+      <Tag>Small text</Tag>
+      <Tag color="green">Small text</Tag>
+      <Tag color="grey">Small text</Tag>
+      <Tag color="red" size="s">
+        Small text
+      </Tag>
+      <Tag color="primary" size="s">
+        Small text
+      </Tag>
     </div>
   );
 }
