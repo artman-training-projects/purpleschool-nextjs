@@ -1,19 +1,14 @@
-import { Header, Tag } from '../components';
+import { useState } from 'react';
+import { Header, Rating } from '../components';
 
 export default function Home(): JSX.Element {
+  const [rating, setRating] = useState<number>(4);
+
   return (
     <div>
-      <Header tag="h1">Some text</Header>
+      <Header tag="h1">Rating</Header>
 
-      <Tag>Small text</Tag>
-      <Tag color="green">Small text</Tag>
-      <Tag color="grey">Small text</Tag>
-      <Tag color="red" size="s">
-        Small text
-      </Tag>
-      <Tag color="primary" size="s">
-        Small text
-      </Tag>
+      <Rating isEditable rating={rating} setRating={setRating} />
     </div>
   );
 }
