@@ -12,12 +12,6 @@ export default withLayout(function Home({ menu }: HomeProps): JSX.Element {
     <>
       <Title tag="h1">Rating</Title>
       <Rating isEditable rating={rating} setRating={setRating} />
-
-      <ul>
-        {menu.map((m) => (
-          <li key={m._id.secondCategory}>{m._id.secondCategory}</li>
-        ))}
-      </ul>
     </>
   );
 });
