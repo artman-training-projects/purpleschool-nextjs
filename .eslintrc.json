@@ -5,16 +5,12 @@
   "rules": {
     "semi": "off",
     "quotes": ["error", "single"],
-    // "react/jsx-max-props-per-line": [1, { "when": "multiline" }],
-    // "react/jsx-first-prop-new-line": "always",
+    "react/jsx-one-expression-per-line": [1, { "allow": "none" }],
     "react/jsx-sort-props": [
       1,
       {
         "callbacksLast": true,
         "shorthandFirst": true
-        // "shorthandLast": <boolean>,
-        // "ignoreCase": true,
-        // "noSortAlphabetically": <boolean>,
       }
     ],
     "@next/next/no-document-import-in-page": "off",
