@@ -1,15 +1,15 @@
 :root {
-  --black: #3b434e;
-  --gray-light: #ebebeb;
-  --gray: #a4a4a4;
-  --gray-dark: #6c7077;
+  --black: #3B434E;
+  --gray-light: #EBEBEB;
+  --gray: #A4A4A4;
+  --gray-dark: #6C7077;
   --white: white;
-  --primary: #7351f5;
-  --primary-hover: #6344df;
-  --red-light: #fea291;
-  --red: #fc836d;
-  --green: #007b48;
-  --green-light: #c8f8e4;
+  --primary: #7351F5;
+  --primary-hover: #6344DF;
+  --red-light: #FEA291;
+  --red: #FC836D;
+  --green: #007B48;
+  --green-light: #C8F8E4;
   --font-family: 'Noto Sans KR', sans-serif;
 }
 
@@ -19,7 +19,7 @@ body {
   padding: 0;
 
   color: var(--black);
-  background: #f5f6f8;
+  background: #F5F6F8;
 
   font-family: 'Noto Sans KR', sans-serif;
 }

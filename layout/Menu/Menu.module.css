@@ -51,15 +51,22 @@
 
   list-style: none;
 
-  border-left: 1px solid #dfdfdf;
+  border-left: 1px solid #DFDFDF;
 }
 
 .secondLevelBlock {
+  display: none;
   overflow: hidden;
 
   padding: 0;
 
   list-style: none;
+}
+
+.secondLevelBlockOpened:last-child {
+  display: block;
+
+  margin-bottom: 20px;
 }
 
 .thirdLevel {

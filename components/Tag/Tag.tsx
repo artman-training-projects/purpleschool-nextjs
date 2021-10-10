@@ -12,7 +12,11 @@ export const Tag = ({
 }: TagProps): JSX.Element => {
   return (
     <div {...props} className={cn(styles.tag, className, styles[size], styles[color])}>
-      {href ? <a href={href}>{children}</a> : <>{children}</>}
+      {href ? <a href={href}>
+{children}
+</a> : <>
+{children}
+</>}
     </div>
   );
 };
