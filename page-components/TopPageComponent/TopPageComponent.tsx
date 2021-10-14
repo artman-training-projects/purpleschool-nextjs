@@ -1,4 +1,4 @@
-import { HhData, Tag, Title } from '../../components';
+import { Advantages, HhData, Paragraph, Tag, Title } from '../../components';
 import { TopPageComponentProps } from './TopPageComponent.props';
 import styles from './TopPageComponent.module.css';
 import { TopLevelCategory } from '../../interfaces/page.interface';
@@ -32,6 +32,24 @@ export function TopPageComponent({
       </div>
 
       {firstCategory === TopLevelCategory.Courses && page.hh && <HhData {...page.hh} />}
+
+      {page.advantages && page.advantages.length > 0 && (
+        <>
+          <Title tag="h2">Преимущества</Title>
+          <Advantages advantages={page.advantages} />
+        </>
+      )}
+
+      {page.seoText && (
+        <div className={styles.seo} dangerouslySetInnerHTML={{ __html: page.seoText }} />
+      )}
+
+      <Title tag="h2">Получаемые навыки</Title>
+      {page.tags.map((t) => (
+        <Tag color="primary" key={t}>
+          {t}
+        </Tag>
+      ))}
     </div>
   );
 }
