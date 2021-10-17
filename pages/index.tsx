@@ -2,7 +2,7 @@ import { GetStaticPropsResult } from 'next';
 import { useState } from 'react';
 import axios from 'axios';
 import { withLayout } from '../layout/Layout';
-import { Title, Rating, Input } from '../components';
+import { Title, Rating, Input, Textarea } from '../components';
 import { MenuItem } from '../interfaces/menu.interface';
 
 export default withLayout(function Home({ menu }: HomeProps): JSX.Element {
@@ -13,6 +13,7 @@ export default withLayout(function Home({ menu }: HomeProps): JSX.Element {
       <Title tag="h1">Rating</Title>
       <Rating isEditable rating={rating} setRating={setRating} />
       <Input />
+      <Textarea />
     </>
   );
 });
