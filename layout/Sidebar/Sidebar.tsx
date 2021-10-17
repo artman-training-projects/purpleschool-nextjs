@@ -2,13 +2,14 @@ import cn from 'classnames';
 import { SidebarProps } from './Sidebar.props';
 import styles from './Sidebar.module.css';
 import { Menu } from '../Menu/Menu';
+import { Search } from '../../components';
 import Logo from '../logo.svg';
 
 export const Sidebar = ({ className, ...props }: SidebarProps): JSX.Element => {
   return (
     <div {...props} className={cn(styles.sidebar, className)}>
       <Logo className={cn(styles.logo)} />
-      <div>Поиск</div>
+      <Search />
       <Menu />
     </div>
   );
