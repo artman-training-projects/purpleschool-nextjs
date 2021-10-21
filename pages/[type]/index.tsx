@@ -32,12 +32,9 @@ export async function getStaticProps({
     };
   }
 
-  const { data: menu } = await axios.post<unknown, Record<string, MenuItem[]>>(
-    process.env.NEXT_PUBLIC_DOMAIN + '/api/top-page/find',
-    {
-      firstCategory: firstCategoryItem.id,
-    },
-  );
+  const { data: menu } = await axios.post<unknown, Record<string, MenuItem[]>>(API.topPage.find, {
+    firstCategory: firstCategoryItem.id,
+  });
 
   return {
     props: {

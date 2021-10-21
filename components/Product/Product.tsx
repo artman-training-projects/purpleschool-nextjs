@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import { useState } from 'react';
+import { Fragment, useState } from 'react';
 import cn from 'classnames';
 import { ProductProps } from './Product.props';
 import styles from './Product.module.css';
@@ -104,10 +104,10 @@ export const Product = ({ product, className, ...props }: ProductProps): JSX.Ele
         color="blue"
       >
         {product.reviews.map((r) => (
-          <>
-            <Review key={r._id} review={r} />
+          <Fragment key={r._id}>
+            <Review review={r} />
             <Divider />
-          </>
+          </Fragment>
         ))}
         <ReviewForm productId={product._id} />
       </Card>
