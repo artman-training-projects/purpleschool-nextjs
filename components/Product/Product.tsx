@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import { Fragment, useState } from 'react';
+import { Fragment, useRef, useState } from 'react';
 import cn from 'classnames';
 import { ProductProps } from './Product.props';
 import styles from './Product.module.css';
@@ -7,10 +7,19 @@ import { Button, Card, Divider, Rating, Review, ReviewForm, Tag } from '..';
 import { priceRu, declOfNum } from '../../helpers/helpers';
 
 export const Product = ({ product, className, ...props }: ProductProps): JSX.Element => {
+  const reviewRef = useRef<HTMLDivElement>(null);
   const [isReviewOpened, setIsReviewOpened] = useState<boolean>(false);
 
+  const scrollToReview = () => {
+    setIsReviewOpened(true);
+    reviewRef.current?.scrollIntoView({
+      behavior: 'smooth',
+      block: 'start',
+    });
+  };
+
   return (
-    <>
+    <div className={className} {...props}>
       <Card className={styles.product}>
         <div className={styles.logo}>
           <Image
@@ -49,7 +58,9 @@ export const Product = ({ product, className, ...props }: ProductProps): JSX.Ele
         <div className={styles.priceTitle}>цена</div>
         <div className={styles.creditTitle}>кредит</div>
         <div className={styles.rateTitle}>
-          {product.reviewCount} {declOfNum(product.reviewCount, ['отзыв', 'отзыва', 'отзывов'])}
+          <a href="#ref" onClick={scrollToReview}>
+            {product.reviewCount} {declOfNum(product.reviewCount, ['отзыв', 'отзыва', 'отзывов'])}
+          </a>
         </div>
 
         <Divider className={styles.hr} />
@@ -102,6 +113,7 @@ export const Product = ({ product, className, ...props }: ProductProps): JSX.Ele
           [styles.closed]: !isReviewOpened,
         })}
         color="blue"
+        ref={reviewRef}
       >
         {product.reviews.map((r) => (
           <Fragment key={r._id}>
@@ -111,6 +123,6 @@ export const Product = ({ product, className, ...props }: ProductProps): JSX.Ele
         ))}
         <ReviewForm productId={product._id} />
       </Card>
-    </>
+    </div>
   );
 };
