@@ -117,7 +117,7 @@
   margin-bottom: 20px;
   padding-left: 15px;
 
-  border-left: 2px solid #1dc37e;
+  border-left: 2px solid #1DC37E;
 }
 
 .disadvantages {
@@ -148,14 +148,26 @@
   border-bottom: 1px dashed var(--gray-light);
 }
 
-.reviews {
+.rateTitle a {
+  color: var(--primary);
+}
+
+.closed {
   overflow: hidden;
 
+  max-height: 0;
+  padding: 0;
+}
+
+.opened {
+  max-height: auto;
   padding: 30px;
 }
 
-.rateTitle a {
-  color: var(--primary);
+.reviews {
+  /* overflow: hidden; */
+
+  /* padding: 30px; */
 }
 
 @media screen and (max-width: 1320px) {
