@@ -8,8 +8,8 @@
     "react/jsx-sort-props": [
       1,
       {
-        "callbacksLast": true,
-        "shorthandFirst": true
+        "shorthandFirst": true,
+        "callbacksLast": true
       }
     ],
     // "react/jsx-max-props-per-line": [1, { "maximum": 1 }],
