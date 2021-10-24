@@ -36,10 +36,12 @@
       'header'
       'body'
       'footer';
+
+    gap: 10px;
   }
 
   .header {
-    display: block;
+    display: grid;
   }
 
   .sidebar {
