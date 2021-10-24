@@ -5,8 +5,8 @@ import cn from 'classnames';
 import { HeaderProps } from './Header.props';
 import styles from './Header.module.css';
 import Logo from '../logo.svg';
-import { ButtonIcon } from '../../components/ButtonIcon/ButtonIcon';
 import { Sidebar } from '../Sidebar/Sidebar';
+import { ButtonIcon } from '../../components';
 
 export const Header = ({ className, ...props }: HeaderProps): JSX.Element => {
   const router = useRouter();

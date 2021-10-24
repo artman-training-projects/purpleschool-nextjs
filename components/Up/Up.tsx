@@ -1,7 +1,7 @@
 import { motion, useAnimation } from 'framer-motion';
 import { useEffect } from 'react';
+import { ButtonIcon } from '..';
 import { useScrollY } from '../../hooks/useScrollY';
-import { ButtonIcon } from '../ButtonIcon/ButtonIcon';
 import styles from './Up.module.css';
 
 export const Up = (): JSX.Element => {
