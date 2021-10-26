@@ -6,7 +6,7 @@ import SortIcon from './sort.svg';
 export const Sort = ({ sort, setSort, className, ...props }: SortProps): JSX.Element => {
   return (
     <div className={cn(styles.sort, className)} {...props}>
-      <span
+      <button
         className={cn({
           [styles.active]: sort === SortEnum.Rating,
         })}
@@ -14,9 +14,9 @@ export const Sort = ({ sort, setSort, className, ...props }: SortProps): JSX.Ele
       >
         <SortIcon className={styles.sortIcon} />
         По рейтингу
-      </span>
+      </button>
 
-      <span
+      <button
         className={cn({
           [styles.active]: sort === SortEnum.Price,
         })}
@@ -24,7 +24,7 @@ export const Sort = ({ sort, setSort, className, ...props }: SortProps): JSX.Ele
       >
         <SortIcon className={styles.sortIcon} />
         По цене
-      </span>
+      </button>
     </div>
   );
 };

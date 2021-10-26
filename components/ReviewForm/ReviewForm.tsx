@@ -9,7 +9,12 @@ import { IReviewForm, IReviewSentResponse } from './ReviewForm.interface';
 import { API } from '../../helpers/api';
 import { useState } from 'react';
 
-export const ReviewForm = ({ productId, className, ...props }: ReviewFormProps): JSX.Element => {
+export const ReviewForm = ({
+  productId,
+  isOpened,
+  className,
+  ...props
+}: ReviewFormProps): JSX.Element => {
   const {
     register,
     control,
@@ -47,12 +52,14 @@ export const ReviewForm = ({ productId, className, ...props }: ReviewFormProps):
         <Input
           error={errors.name}
           placeholder="Имя"
+          tabIndex={isOpened ? 0 : -1}
           {...register('name', { required: { value: true, message: 'Заполните имя' } })}
         />
         <Input
           className={styles.title}
           error={errors.title}
           placeholder="Заголовок отзыва"
+          tabIndex={isOpened ? 0 : -1}
           {...register('title', { required: { value: true, message: 'Заполните заголовок' } })}
         />
 
@@ -68,6 +75,7 @@ export const ReviewForm = ({ productId, className, ...props }: ReviewFormProps):
                 rating={field.value}
                 ref={field.ref}
                 setRating={field.onChange}
+                tabIndex={isOpened ? 0 : -1}
               />
             )}
             rules={{ required: { value: true, message: 'Укажите рейтинг' } }}
@@ -77,12 +85,15 @@ export const ReviewForm = ({ productId, className, ...props }: ReviewFormProps):
         <Textarea
           className={styles.description}
           placeholder="Текст отзыва"
+          tabIndex={isOpened ? 0 : -1}
           {...register('description', { required: { value: true, message: 'Заполните описание' } })}
           error={errors.description}
         />
 
         <div className={styles.submit}>
-          <Button appearance="primary">Отправить</Button>
+          <Button appearance="primary" tabIndex={isOpened ? 0 : -1}>
+            Отправить
+          </Button>
           <span className={styles.info}>
             * Перед публикацией отзыв пройдет предварительную модерацию и проверку
           </span>

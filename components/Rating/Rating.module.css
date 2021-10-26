@@ -1,3 +1,7 @@
+.start {
+  display: inline-block;
+}
+
 .star svg {
   margin-right: 5px;
 }

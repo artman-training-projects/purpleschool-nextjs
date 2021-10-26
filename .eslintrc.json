@@ -12,8 +12,6 @@
         "callbacksLast": true
       }
     ],
-    // "react/jsx-max-props-per-line": [1, { "maximum": 1 }],
-    // "react/jsx-first-prop-new-line": "always",
     "react/display-name": "off",
     "@next/next/no-document-import-in-page": "off",
     "@next/next/no-page-custom-font": "off",
