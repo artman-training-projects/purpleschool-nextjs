@@ -29,7 +29,7 @@ export function TopPageComponent({
       <div className={styles.title}>
         <Title tag="h1">{page.title}</Title>
         {products && (
-          <Tag color="grey" size="m">
+          <Tag aria-label={products.length + ' элементов'} color="grey" size="m">
             {products.length}
           </Tag>
         )}

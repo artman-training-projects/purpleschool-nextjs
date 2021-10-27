@@ -4,7 +4,7 @@ import { withLayout } from '../layout/Layout';
 import { MenuItem } from '../interfaces/menu.interface';
 import { API } from '../helpers/api';
 
-export default withLayout(function Home({ menu }: HomeProps): JSX.Element {
+export default withLayout(function Home(): JSX.Element {
   return <></>;
 });
 

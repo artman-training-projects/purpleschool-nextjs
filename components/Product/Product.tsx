@@ -52,18 +52,32 @@ export const Product = motion(
             <div className={styles.title}>{product.title}</div>
 
             <div className={styles.price}>
-              {priceRu(product.price)}
+              <span>
+                <span className="visuallyHidden">Цена</span>
+                {priceRu(product.price)}
+              </span>
               {product.oldPrice && (
                 <Tag className={styles.oldPrice} color="green">
-                  {priceRu(product.price - product.oldPrice)}
+                  <span>
+                    <span className="visuallyHidden">Скидка</span>
+                    {priceRu(product.price - product.oldPrice)}
+                  </span>
                 </Tag>
               )}
             </div>
             <div className={styles.credit}>
-              {priceRu(product.credit)}/<span className={styles.month}>мес</span>
+              <span>
+                <span className="visuallyHidden">Кредит</span>
+                {priceRu(product.credit)}/<span className={styles.month}>мес</span>
+              </span>
             </div>
             <div className={styles.rating}>
-              <Rating rating={product.reviewAvg ?? product.initialRating} />
+              <span>
+                <span className="visuallyHidden">
+                  {'Рейтинг' + (product.reviewAvg ?? product.initialRating)}
+                </span>
+                <Rating rating={product.reviewAvg ?? product.initialRating} />
+              </span>
             </div>
 
             <div className={styles.tags}>
@@ -74,8 +88,12 @@ export const Product = motion(
               ))}
             </div>
 
-            <div className={styles.priceTitle}>цена</div>
-            <div className={styles.creditTitle}>кредит</div>
+            <div aria-hidden="true" className={styles.priceTitle}>
+              цена
+            </div>
+            <div aria-hidden="true" className={styles.creditTitle}>
+              кредит
+            </div>
             <div className={styles.rateTitle}>
               <a href="#ref" onClick={scrollToReview}>
                 {product.reviewCount}{' '}

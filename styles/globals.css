@@ -34,7 +34,7 @@ a {
   box-sizing: border-box;
 }
 
-.visualyHidden {
+.visuallyHidden {
   position: absolute;
 
   overflow: hidden;

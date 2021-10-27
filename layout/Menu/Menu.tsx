@@ -124,5 +124,9 @@ export const Menu = (): JSX.Element => {
       </motion.div>
     ));
 
-  return <div className={cn(styles.menu)}>{buildFirstLevel()}</div>;
+  return (
+    <nav className={cn(styles.menu)} role="navigation">
+      {buildFirstLevel()}
+    </nav>
+  );
 };
