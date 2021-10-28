@@ -1,6 +1,6 @@
 import { useRouter } from 'next/router';
 import { useEffect, useState } from 'react';
-import { motion } from 'framer-motion';
+import { motion, useReducedMotion } from 'framer-motion';
 import cn from 'classnames';
 import { HeaderProps } from './Header.props';
 import styles from './Header.module.css';
@@ -10,6 +10,8 @@ import { ButtonIcon } from '../../components';
 
 export const Header = ({ className, ...props }: HeaderProps): JSX.Element => {
   const router = useRouter();
+  const shouldReduceMotion = useReducedMotion();
+
   const [isOpened, setIsOpened] = useState<boolean>(false);
 
   useEffect(() => {
@@ -25,7 +27,7 @@ export const Header = ({ className, ...props }: HeaderProps): JSX.Element => {
       },
     },
     closed: {
-      opacity: 0,
+      opacity: shouldReduceMotion ? 1 : 0,
       x: '100%',
     },
   };
