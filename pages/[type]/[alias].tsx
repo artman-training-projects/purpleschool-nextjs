@@ -1,6 +1,6 @@
 import { GetStaticPathsResult, GetStaticPropsContext, GetStaticPropsResult } from 'next';
 import Head from 'next/head';
-import { ParsedUrlQuery } from 'node:querystring';
+import { ParsedUrlQuery } from 'querystring';
 import axios from 'axios';
 import { withLayout } from '../../layout/Layout';
 import { firstLevelMenu } from '../../helpers/helpers';
