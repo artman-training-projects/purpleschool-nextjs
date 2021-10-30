@@ -2,7 +2,7 @@ import Head from 'next/head';
 import { AppProps } from 'next/dist/shared/lib/router/router';
 import '../styles/globals.css';
 
-export default function MyApp({ Component, pageProps }: AppProps): JSX.Element {
+export default function MyApp({ Component, pageProps, router }: AppProps): JSX.Element {
   return (
     <>
       <Head>
@@ -13,6 +13,9 @@ export default function MyApp({ Component, pageProps }: AppProps): JSX.Element {
           href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&display=swap"
           rel="stylesheet"
         />
+
+        <meta content={process.env.NEXT_PUBLIC_DOMAIN + router.asPath} property="og:url" />
+        <meta content="ru_RU" property="og:locale" />
       </Head>
 
       <Component {...pageProps} />

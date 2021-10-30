@@ -1,4 +1,5 @@
 import { GetStaticPathsResult, GetStaticPropsContext, GetStaticPropsResult } from 'next';
+import Head from 'next/head';
 import { ParsedUrlQuery } from 'node:querystring';
 import axios from 'axios';
 import { withLayout } from '../../layout/Layout';
@@ -14,7 +15,20 @@ export default withLayout(function TopPage({
   page,
   products,
 }: TopPageProps): JSX.Element {
-  return <TopPageComponent firstCategory={firstCategory} page={page} products={products} />;
+  return (
+    <>
+      <Head>
+        <title>{page.metaTitle}</title>
+        <meta content={page.metaDescription} name="description" />
+
+        <meta content={page.metaTitle} property="og:title" />
+        <meta content={page.metaDescription} property="og:description" />
+        <meta content="article" property="og:type" />
+      </Head>
+
+      <TopPageComponent firstCategory={firstCategory} page={page} products={products} />
+    </>
+  );
 });
 
 export async function getStaticPaths(): Promise<GetStaticPathsResult> {
