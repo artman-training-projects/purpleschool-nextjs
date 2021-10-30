@@ -9,28 +9,29 @@ import { TopLevelCategory, TopPageModel } from '../../interfaces/page.interface'
 import { ProductModel } from '../../interfaces/product.interface';
 import { TopPageComponent } from '../../page-components';
 import { API } from '../../helpers/api';
+import { Error404 } from '../404';
 
 export default withLayout(function TopPage({
   firstCategory,
   page,
   products,
 }: TopPageProps): JSX.Element {
+  if (!page || !products) {
+    return <Error404 />;
+  }
+
   return (
     <>
-      {page && products && (
-        <>
-          <Head>
-            <title>{page.metaTitle}</title>
-            <meta content={page.metaDescription} name="description" />
+      <Head>
+        <title>{page.metaTitle}</title>
+        <meta content={page.metaDescription} name="description" />
 
-            <meta content={page.metaTitle} property="og:title" />
-            <meta content={page.metaDescription} property="og:description" />
-            <meta content="article" property="og:type" />
-          </Head>
+        <meta content={page.metaTitle} property="og:title" />
+        <meta content={page.metaDescription} property="og:description" />
+        <meta content="article" property="og:type" />
+      </Head>
 
-          <TopPageComponent firstCategory={firstCategory} page={page} products={products} />
-        </>
-      )}
+      <TopPageComponent firstCategory={firstCategory} page={page} products={products} />
     </>
   );
 });
