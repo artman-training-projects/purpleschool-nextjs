@@ -17,16 +17,20 @@ export default withLayout(function TopPage({
 }: TopPageProps): JSX.Element {
   return (
     <>
-      <Head>
-        <title>{page.metaTitle}</title>
-        <meta content={page.metaDescription} name="description" />
+      {page && products && (
+        <>
+          <Head>
+            <title>{page.metaTitle}</title>
+            <meta content={page.metaDescription} name="description" />
 
-        <meta content={page.metaTitle} property="og:title" />
-        <meta content={page.metaDescription} property="og:description" />
-        <meta content="article" property="og:type" />
-      </Head>
+            <meta content={page.metaTitle} property="og:title" />
+            <meta content={page.metaDescription} property="og:description" />
+            <meta content="article" property="og:type" />
+          </Head>
 
-      <TopPageComponent firstCategory={firstCategory} page={page} products={products} />
+          <TopPageComponent firstCategory={firstCategory} page={page} products={products} />
+        </>
+      )}
     </>
   );
 });

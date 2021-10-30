@@ -4,6 +4,7 @@ import axios from 'axios';
 import { MenuItem } from '../../interfaces/menu.interface';
 import { withLayout } from '../../layout/Layout';
 import { firstLevelMenu } from '../../helpers/helpers';
+import { API } from '../../helpers/api';
 
 export default withLayout(function Type({ firstCategory }: TypeProps): JSX.Element {
   return <>Type:{firstCategory}</>;

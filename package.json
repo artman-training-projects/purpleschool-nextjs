@@ -11,6 +11,8 @@
   "license": "The Unlicense",
   "private": true,
   "scripts": {
+    "prepare": "husky install",
+    "export": "next export",
     "dev": "next dev",
     "dev:debug": "cross-env NODE_OPTIONS='--inspect' next dev",
     "build": "next build",
@@ -38,6 +40,7 @@
     "eslint": "7.32.0",
     "eslint-config-next": "^11.1.2",
     "eslint-plugin-react-hooks": "^4.2.0",
+    "husky": "^7.0.4",
     "prettier": "^2.4.1",
     "stylelint": "^13.13.1",
     "stylelint-config-standard": "^22.0.0",

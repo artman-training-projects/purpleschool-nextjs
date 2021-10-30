@@ -42,7 +42,7 @@ export const ReviewForm = ({
       } else {
         setError('Что-то опшло не так');
       }
-    } catch (err) {
+    } catch (err: any) {
       setError(err.message);
     }
   };
